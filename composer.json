@@ -1,0 +1,36 @@
+{
+    "name": "proget-hq/knox-token",
+    "description": "Support library for signing Samsung Knox API access tokens",
+    "type": "library",
+    "require": {
+        "ext-json": "*",
+        "firebase/php-jwt": "^5.0",
+        "ramsey/uuid": "^3.8"
+    },
+    "require-dev": {
+        "phpunit/phpunit": "^8.2",
+        "friendsofphp/php-cs-fixer": "^2.15"
+    },
+    "license": "MIT",
+    "authors": [
+        {
+            "name": "Arkadiusz Kondas",
+            "email": "arkadiusz.kondas@gmail.com"
+        }
+    ],
+    "autoload": {
+        "psr-4": {
+            "Proget\\": "src/"
+        }
+    },
+    "autoload-dev": {
+        "psr-4": {
+            "Proget\\Tests\\": "tests/"
+        }
+    },
+    "scripts": {
+        "check-cs": "php-cs-fixer fix --dry-run",
+        "fix-cs": "php-cs-fixer fix",
+        "test": "phpunit"
+    }
+}
