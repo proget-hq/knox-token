@@ -28,6 +28,17 @@ use Proget\KnoxToken;
 $accessTokenJwt = KnoxToken::signAccessToken('access-token', 'keys.json');
 ```
 
+### Load certificate
+
+```php
+use Proget\KnoxToken;
+
+$certificate = KnoxToken::loadCertificate('keys.json');
+
+$certificate->publicKey();
+$certificate->privateKeyPem();
+````
+
 ## License
 
 MIT

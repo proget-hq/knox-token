@@ -5,6 +5,7 @@ declare(strict_types=1);
 namespace Proget\Tests;
 
 use PHPUnit\Framework\TestCase;
+use Proget\Certificate;
 use Proget\KnoxToken;
 
 class KnoxTokenTest extends TestCase
@@ -23,6 +24,15 @@ class KnoxTokenTest extends TestCase
             'd13d112e-8e77-4243-b795-ed4e1cf15cf9',
             __DIR__.'/keys.json'
         )));
+    }
+
+    public function testLoadCertificate(): void
+    {
+        $certificate = KnoxToken::loadCertificate(__DIR__.'/keys.json');
+
+        self::assertInstanceOf(Certificate::class, $certificate);
+        self::assertEquals(204, strlen($certificate->publicKey()));
+        self::assertEquals(886, strlen($certificate->privateKeyPem()));
     }
 
     public function testLoadCertificateInvalidPath(): void
