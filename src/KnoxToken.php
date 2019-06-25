@@ -17,10 +17,10 @@ class KnoxToken
 
         return JWT::encode([
             'clientIdentifier' => $clientIdentifier,
-            'publicKey' => $certificate->public(),
+            'publicKey' => $certificate->publicKey(),
             'aud' => self::AUDIENCE,
             'jti' => Uuid::uuid1()->toString().Uuid::uuid1()->toString()
-        ], $certificate->privatePem(), 'RS512');
+        ], $certificate->privateKeyPem(), 'RS512');
     }
 
     public static function signAccessToken(string $accessToken, string $certificatePath): string
@@ -29,13 +29,13 @@ class KnoxToken
 
         return JWT::encode([
             'accessToken' => $accessToken,
-            'publicKey' => $certificate->public(),
+            'publicKey' => $certificate->publicKey(),
             'aud' => self::AUDIENCE,
             'jti' => Uuid::uuid1()->toString().Uuid::uuid1()->toString()
-        ], $certificate->privatePem(), 'RS512');
+        ], $certificate->privateKeyPem(), 'RS512');
     }
 
-    private static function loadCertificate(string $certificatePath): Certificate
+    public static function loadCertificate(string $certificatePath): Certificate
     {
         if (!file_exists($certificatePath)) {
             throw new \RuntimeException(sprintf('Missing certificate file at %s', $certificatePath));

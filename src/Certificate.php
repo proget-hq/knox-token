@@ -9,26 +9,26 @@ class Certificate
     /**
      * @var string
      */
-    private $public;
+    private $publicKey;
 
     /**
      * @var string
      */
-    private $private;
+    private $privateKey;
 
-    public function __construct(string $public, string $private)
+    public function __construct(string $publicKey, string $privateKey)
     {
-        $this->public = $public;
-        $this->private = $private;
+        $this->publicKey = $publicKey;
+        $this->privateKey = $privateKey;
     }
 
-    public function public(): string
+    public function publicKey(): string
     {
-        return $this->public;
+        return $this->publicKey;
     }
 
-    public function privatePem(): string
+    public function privateKeyPem(): string
     {
-        return "-----BEGIN RSA PRIVATE KEY-----\n".$this->private."\n-----END RSA PRIVATE KEY-----";
+        return "-----BEGIN RSA PRIVATE KEY-----\n".$this->privateKey."\n-----END RSA PRIVATE KEY-----";
     }
 }
