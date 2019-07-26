@@ -20,12 +20,12 @@
     ],
     "autoload": {
         "psr-4": {
-            "Proget\\": "src/"
+            "Proget\\Samsung\\KnoxToken\\": "src/"
         }
     },
     "autoload-dev": {
         "psr-4": {
-            "Proget\\Tests\\": "tests/"
+            "Proget\\Tests\\Samsung\\KnoxToken\\": "tests/"
         }
     },
     "scripts": {
