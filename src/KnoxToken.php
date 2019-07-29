@@ -11,10 +11,8 @@ class KnoxToken
 {
     private const AUDIENCE = 'KnoxWSM';
 
-    public static function signClientIdentifier(string $clientIdentifier, string $certificatePath): string
+    public static function signClientIdentifier(string $clientIdentifier, Certificate $certificate): string
     {
-        $certificate = Certificate::fromPath($certificatePath);
-
         return JWT::encode([
             'clientIdentifier' => $clientIdentifier,
             'publicKey' => $certificate->publicKey(),
@@ -23,10 +21,8 @@ class KnoxToken
         ], $certificate->privateKeyPem(), 'RS512');
     }
 
-    public static function signAccessToken(string $accessToken, string $certificatePath): string
+    public static function signAccessToken(string $accessToken, Certificate $certificate): string
     {
-        $certificate = Certificate::fromPath($certificatePath);
-
         return JWT::encode([
             'accessToken' => $accessToken,
             'publicKey' => $certificate->publicKey(),
