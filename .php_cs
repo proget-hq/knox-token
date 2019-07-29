@@ -11,6 +11,7 @@ return PhpCsFixer\Config::create()
         'concat_space' => ['spacing' => 'none'],
         'declare_strict_types' => true,
         'method_separation' => true,
+        'native_function_invocation' => ['include' => ['@all'], 'strict' => false],
         'no_blank_lines_after_class_opening' => true,
         'no_spaces_around_offset' => ['positions' => ['inside', 'outside']],
         'no_unneeded_control_parentheses' => true,

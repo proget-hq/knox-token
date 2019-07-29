@@ -15,7 +15,7 @@ More info at [Knox Cloud API Integration Guide](https://docs.samsungknox.com/clo
 ### Sign your Client Identifier
 
 ```php
-use Proget\KnoxToken;
+use Proget\Samsung\KnoxToken\KnoxToken;
 
 $clientIdentifierJwt = KnoxToken::signClientIdentifier('your-client-identifier', 'keys.json');
 ```
@@ -23,7 +23,7 @@ $clientIdentifierJwt = KnoxToken::signClientIdentifier('your-client-identifier',
 ### Sign your Access Token
 
 ```php
-use Proget\KnoxToken;
+use Proget\Samsung\KnoxToken\KnoxToken;
 
 $accessTokenJwt = KnoxToken::signAccessToken('access-token', 'keys.json');
 ```
@@ -31,9 +31,9 @@ $accessTokenJwt = KnoxToken::signAccessToken('access-token', 'keys.json');
 ### Load certificate
 
 ```php
-use Proget\KnoxToken;
+use Proget\Samsung\KnoxToken\Certificate;
 
-$certificate = KnoxToken::loadCertificate('keys.json');
+$certificate = Certificate::fromPath('keys.json');
 
 $certificate->publicKey();
 $certificate->privateKeyPem();
