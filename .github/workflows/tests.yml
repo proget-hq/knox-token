@@ -17,7 +17,5 @@ jobs:
               ${{ runner.os }}-composer-
         - name: Install dependencies
           run: composer install
-        - name: Check code style
-          run: composer check-cs
         - name: Run tests
-          run: composer test
+          run: composer tests

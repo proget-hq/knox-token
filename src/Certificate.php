@@ -28,7 +28,7 @@ class Certificate
             throw new \RuntimeException(\sprintf('Missing certificate file at %s', $certificatePath));
         }
 
-        $certificate = \json_decode(\file_get_contents($certificatePath), true);
+        $certificate = \json_decode((string) \file_get_contents($certificatePath), true);
         if (!isset($certificate['Public'], $certificate['Private'])) {
             throw new \RuntimeException(\sprintf('Invalid certificate file at %s', $certificatePath));
         }
