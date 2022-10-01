@@ -6,15 +6,8 @@ namespace Proget\Samsung\KnoxToken;
 
 class Certificate
 {
-    /**
-     * @var string
-     */
-    private $publicKey;
-
-    /**
-     * @var string
-     */
-    private $privateKey;
+    private string $publicKey;
+    private string $privateKey;
 
     public function __construct(string $publicKey, string $privateKey)
     {
@@ -28,6 +21,7 @@ class Certificate
             throw new \RuntimeException(\sprintf('Missing certificate file at %s', $certificatePath));
         }
 
+        /** @var array{Public?: string, Private?: string} $certificate */
         $certificate = \json_decode((string) \file_get_contents($certificatePath), true);
         if (!isset($certificate['Public'], $certificate['Private'])) {
             throw new \RuntimeException(\sprintf('Invalid certificate file at %s', $certificatePath));
