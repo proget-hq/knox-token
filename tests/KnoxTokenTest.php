@@ -12,7 +12,7 @@ class KnoxTokenTest extends TestCase
 {
     public function testSignClientIdentifier(): void
     {
-        self::assertEquals(713, \strlen(KnoxToken::signClientIdentifier(
+        self::assertEquals(709, \strlen(KnoxToken::signClientIdentifier(
             'a33a7593-dbaf-457f-87be-19243a421aec',
             Certificate::fromPath(__DIR__.'/keys.json')
         )));
@@ -20,7 +20,7 @@ class KnoxTokenTest extends TestCase
 
     public function testSignAccessToken(): void
     {
-        self::assertEquals(707, \strlen(KnoxToken::signAccessToken(
+        self::assertEquals(703, \strlen(KnoxToken::signAccessToken(
             'd13d112e-8e77-4243-b795-ed4e1cf15cf9',
             Certificate::fromPath(__DIR__.'/keys.json')
         )));
