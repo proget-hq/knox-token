@@ -41,6 +41,16 @@ $certificate->publicKey();
 $certificate->privateKeyPem();
 ````
 
+### Encrypt data
+
+Needed when [assigning profile to device](https://docs.samsungknox.com/devref/knox-mobile-enrollment/index.htm#tag/Customer-Device-Management/operation/assignProfileUsingPUT) (_deviceDetails.userToken_ and _deviceDetails.userName_ must be encrypted).
+
+```php
+use Proget\Samsung\KnoxToken\KnoxEncryptionUtility;
+
+$encrypted = KnoxEncryptionUtility::encrypt('secret');
+````
+
 ## License
 
 MIT

@@ -9,10 +9,14 @@
         "ramsey/uuid": "^3.8 || ^4.0"
     },
     "require-dev": {
+        "phpseclib/phpseclib": "^2.0 || ^3.0",
         "phpunit/phpunit": "^9.3",
         "friendsofphp/php-cs-fixer": "^3.11",
         "phpstan/phpstan": "^1.8.6",
         "phpstan/phpstan-phpunit": "^1.1"
+    },
+    "suggest": {
+        "phpseclib/phpseclib": "To use KnoxEncryptionUtility class"
     },
     "license": "MIT",
     "authors": [
