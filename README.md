@@ -10,7 +10,7 @@ composer require proget-hq/knox-token
 
 ## Usage
 
-More info at [Knox Cloud API Integration Guide](https://docs.samsungknox.com/cloud-authentication/api-reference/Default.htm#section/Generate-your-access-token)
+More info at [Knox Cloud API Integration Guide](https://docs.samsungknox.com/dev/knox-cloud-authentication/tutorial/tutorial-for-customers-generate-access-token/)
 
 ### Sign your Client Identifier
 
